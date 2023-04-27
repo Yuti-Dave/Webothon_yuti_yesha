@@ -1,0 +1,84 @@
+<html>
+<head><link rel="Stylesheet" href="C:\Users\yutidave30\OneDrive\Desktop\p3html\format.css">
+<style>
+p {
+  text-align: center;
+  font-size: 60px;
+  margin-top: 0px;
+}
+</style>
+</head>
+<body>
+<p id="demo"></p>
+
+<script>
+
+var countDownDate = new Date("Jan 5, 2024 15:37:25").getTime();
+
+var x = setInterval(function() {
+
+  var now = new Date().getTime();
+    
+  var distance = countDownDate - now;
+    
+  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    
+  document.getElementById("demo").innerHTML = days + "d " + hours + "h "
+  + minutes + "m " + seconds + "s ";
+    
+  if (distance < 0) {
+    clearInterval(x);
+    document.getElementById("demo").innerHTML = "EXPIRED";
+  }
+}, 1000);
+</script>
+<form class="reg"><table class="main"><h1>Registration Form For Students</h1>
+<tr><td><label for="name">NAME</label></td>
+<td>:</td><td><input class="i" type="text" id="name" name="name" placeholder="enter your name"></td>
+</tr>
+<tr><td><label for="email">EMAIL</label></td>
+<td>:</td><td><input class="i" type="email" id="email" name="email" placeholder="enter your email"></td>
+</tr>
+<tr><td><label for="psswd">PASSWORD</label></td>
+<td>:</td><td><input class="i" type="password" id="psswd" name="psswd"></td>
+</tr>
+<tr><td><label for="ph">PHONE NUMBER</label></td>
+<td>:</td><td><input class="i" type="number" id="ph" name="ph" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}"
+ placeholder="123-45-678"></td>
+</tr>
+<tr><td><label for="gen">GENDER</label></td>
+<td>:</td><td class="ro">
+<label for="m">male</label>
+<input  type="radio" id="m" name="gen" value="male">
+<label for="f">female</label>
+<input  type="radio" id="f" name="gen" value="female">
+<label  for="o">others</label>
+<input  type="radio" id="o" name="gen" value="others">
+</td>
+</tr>
+<tr><td><label for="lang">LANGUAGE</label></td>
+<td>:</td><td><select class="i" id="lang" name="lang" >
+<option value="Select Language">Select Language</option>
+<option value="English">English</option>
+<option value="Hindi">Hindi</option>
+<option value="Gujarati">Gujarati</option>
+<option value="French">French</option>
+<option value="German">German</option>
+</select></td>
+</tr>
+<tr><td><label for="zc">ZIPCODE</label></td>
+<td>:</td><td><input class="i" type="number" id="zc" name="zc" pattern="[0-9]{4}-[0-9]{2}"
+ placeholder="1234-56"></td>
+</tr>
+<tr><td><label for="about">ABOUT</label></td>
+<td>:</td><td><input class="i" size="30%" type="textarea" id="about" name="about" placeholder="write about yourself"></td>
+</tr><tr><td colspan="3">
+<input type="submit" class="s" value="REGISTER"></td></tr>
+</table></form>
+
+
+</body>
+</html>
